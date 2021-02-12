@@ -7,7 +7,7 @@ app.get("/", (req, res) => {
   //if (!!publicIp) throw new NotFoundError("not public ip");
 
   const response = {
-    publicIp: publicIp,
+    publicIp: publicIp.split("::ffff:")[1],
   };
   res.send(response);
 });
